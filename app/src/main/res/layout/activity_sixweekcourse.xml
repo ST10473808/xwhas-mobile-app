@@ -21,6 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
+            android:id="@+id/home"
             android:text="HOME"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -29,6 +30,7 @@
 
 
         <TextView
+            android:id="@+id/contact"
             android:text="CONTACT DETAILS"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -37,6 +39,7 @@
 
 
         <TextView
+            android:id="@+id/calculate_fees"
             android:text="CALCULATE FEES"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -44,6 +47,7 @@
             android:gravity="center"/>
 
         <TextView
+            android:id="@+id/six_week_course"
             android:text="SIX WEEK COURSE"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -51,12 +55,12 @@
             android:gravity="center"/>
 
         <TextView
+            android:id="@+id/six_month_course"
             android:text="SIX MONTH COURSE"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"/>
-
 
     </LinearLayout>
 
