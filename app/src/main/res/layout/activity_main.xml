@@ -8,7 +8,7 @@
     android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <!--Logo plqace holder -->
+    <!--Logo place holder -->
         <TextView
             android:id="@+id/logo"
             android:text="LOGO"
@@ -19,7 +19,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_margin="12dp"/>
 
-        <!-- TOP MENU -->
+    <!--navigation bar-->
         <LinearLayout
             android:id="@+id/topMenu"
             android:orientation="horizontal"
@@ -111,7 +111,7 @@
             android:layout_marginTop="12dp"
             android:gravity="center"/>
 
-        <!--Dropdown-->
+        <!--dropdown-->
 
         <TextView
             android:id="@+id/dropdown"
