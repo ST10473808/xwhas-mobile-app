@@ -8,7 +8,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+//Sotres the information of the courses
+
+data class Course(
+    val name: String,
+    val price: Int
+)
+
 class CalculateFees : AppCompatActivity() {
+
+    //stores all selected courses
+    private val selectedCourses = mutableListOf<Course>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -18,11 +29,27 @@ class CalculateFees : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Navigaation
+
         val home = findViewById<TextView>(R.id.home)
         val contact = findViewById<TextView>(R.id.contact)
         val calculate_fees = findViewById<TextView>(R.id.calculate_fees)
         val six_week_course = findViewById<TextView>(R.id.six_week_course)
         val six_month_course = findViewById<TextView>(R.id.six_month_course)
+
+        // Course selection
+        val btn_first_aid = findViewById<TextView>(R.id.btn_first_aid)
+        val btn_Sewing = findViewById<TextView>(R.id.btn_Sewing)
+        val btn_Landscaping = findViewById<TextView>(R.id.btn_Landscaping)
+        val btn_Life_skills = findViewById<TextView>(R.id.btn_Life_skills)
+        val btn_Child_Minding = findViewById<TextView>(R.id.btn_Child_Minding)
+        val btn_Cooking = findViewById<TextView>(R.id.btn_Cooking)
+        val btn_Garden_Maintenance = findViewById<TextView>(R.id.btn_Garden_Maintenance)
+        val btn_calculate = findViewById<TextView>(R.id.btn_calculate)
+        val btn_Total = findViewById<TextView>(R.id.btn_Total)
+
+        // Navigaation buttons
 
         home.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -48,5 +75,52 @@ class CalculateFees : AppCompatActivity() {
             val intent = Intent(this, Sixmonthcourse::class.java)
             startActivity(intent)
         }
+
+        // Course selection buttons
+
+        btn_first_aid.setOnClickListener {
+            toggleCourse(Course("First Aid", 1500))
+        }
+
+        btn_Sewing.setOnClickListener {
+            toggleCourse(Course("Sewing", 1500))
+        }
+
+        btn_Landscaping.setOnClickListener {
+            toggleCourse(Course("Landscaping", 1500))
+        }
+
+        btn_Life_skills.setOnClickListener {
+            toggleCourse(Course("Life skills", 1500))
+        }
+
+        btn_Child_Minding.setOnClickListener {
+            toggleCourse(Course("Child Minding", 750))
+        }
+
+        btn_Cooking.setOnClickListener {
+            toggleCourse(Course("Cooking", 750))
+        }
+
+        btn_Garden_Maintenance.setOnClickListener {
+            toggleCourse(Course("Garden Maintenance", 750))
+        }
+
+        btn_calculate.setOnClickListener {
+            val toal = selectedCourses.sumOf { it.price }
+            btn_Total.text = "Total: R$toal"
+        }
     }
-}
+
+        //Selects and deslects the courses
+        private fun toggleCourse(course: Course) {
+            val existingCourse = selectedCourses.find { it.name == course.name }
+
+            if (existingCourse != null) {
+                selectedCourses.remove(existingCourse)
+            } else {
+                selectedCourses.add(course)
+            }
+        }
+    }
+
