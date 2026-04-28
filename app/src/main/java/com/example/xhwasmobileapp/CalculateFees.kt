@@ -135,6 +135,9 @@ class CalculateFees : AppCompatActivity() {
                 selectedCourses.remove(existingCourse)
             } else {
                 selectedCourses.add(course)
+
+                // clear button goes here
+
             }
         }
     }
