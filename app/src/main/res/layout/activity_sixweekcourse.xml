@@ -182,6 +182,8 @@
                        android:text="Garden Maintenance"
                        android:textSize="20sp"/>
 
+                   <!-- Images goes here-->
+
                    <TextView
                        android:layout_height="wrap_content"
                        android:layout_width="match_parent"

@@ -49,7 +49,7 @@ class CalculateFees : AppCompatActivity() {
         val btn_calculate = findViewById<TextView>(R.id.btn_calculate)
         val btn_Total = findViewById<TextView>(R.id.btn_Total)
 
-        // Navigaation buttons
+        // Navigation buttons
 
         home.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -106,13 +106,28 @@ class CalculateFees : AppCompatActivity() {
             toggleCourse(Course("Garden Maintenance", 750))
         }
 
+        //Used to work out the discounts
+
         btn_calculate.setOnClickListener {
-            val toal = selectedCourses.sumOf { it.price }
-            btn_Total.text = "Total: R$toal"
+            val total = selectedCourses.sumOf { it.price }
+            val courseCount = selectedCourses.size
+
+            val discount = when {
+            courseCount == 1 -> 0
+            courseCount == 2 -> 5
+            courseCount == 3 -> 10
+             else -> if (courseCount > 3) 15 else  0
+        }
+
+            val discountedTotal = total - (total * discount / 100)
+            val finalTotal = discountedTotal - courseCount
+
+           btn_Total.text = "Total: R$finalTotal"
+
         }
     }
 
-        //Selects and deslects the courses
+        //Selects and deselects the courses
         private fun toggleCourse(course: Course) {
             val existingCourse = selectedCourses.find { it.name == course.name }
 

@@ -64,7 +64,6 @@
             android:layout_weight="1"
             android:gravity="center"/>
 
-
     </LinearLayout>
 
     <ScrollView
@@ -106,6 +105,8 @@
                         android:layout_width="match_parent"
                         android:text="First Aid"
                         android:textSize="20sp"/>
+
+                    <!-- Images goes here-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -273,7 +274,7 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!--Cont1 Child Minding-->
+            <!--Cont5 Child Minding-->
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card5"
@@ -320,7 +321,7 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!--Cont2 Cooking-->
+            <!--Cont6 Cooking-->
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card6"
@@ -341,6 +342,8 @@
                         android:layout_width="match_parent"
                         android:text="Cooking"
                         android:textSize="20sp"/>
+
+                    <!-- Images goes here-->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -368,7 +371,7 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!--Cont3 Garden Maintenance-->
+            <!--Cont7 Garden Maintenance-->
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card7"
@@ -384,11 +387,14 @@
                     android:padding="12dp"
                     android:orientation="vertical">
 
+
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
                         android:text="Garden Maintenance"
                         android:textSize="20sp"/>
+
+                    <!-- Images goes here-->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -415,6 +421,7 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <!--Calculate-->
 
             <TextView
                 android:id="@+id/btn_Total"
