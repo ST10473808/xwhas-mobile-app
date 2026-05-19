@@ -112,11 +112,26 @@
                        android:text="The purpose of this course is to provide basic child and baby care. Which includes the needs of new born babies to one year old needs, the needs of toddlers and educational toys"
                        android:layout_marginTop="8dp"/>
 
-                   <TextView
-                       android:layout_height="wrap_content"
+                   <LinearLayout
                        android:layout_width="match_parent"
-                       android:text="Price R750"
-                       android:layout_marginTop="8dp"/>
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+                       android:layout_marginTop="8dp"
+                       android:gravity="center_vertical">
+
+                       <TextView
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="1"
+                           android:text="Price R750"/>
+
+                       <Button
+                           android:id="@+id/btn_more_info"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="More Info"/>
+
+                   </LinearLayout>
 
                </LinearLayout>
 
@@ -150,11 +165,26 @@
                        android:text="The purpose of this course is to prepare and cook nutritious family meals. Which includes the nutritional requirements for a healthy body, the types of protein, carbohydrates and vegtables, planning meals, tasty and nutritious recipes and preparing and cooking meals"
                        android:layout_marginTop="8dp"/>
 
-                   <TextView
-                       android:layout_height="wrap_content"
+                   <LinearLayout
                        android:layout_width="match_parent"
-                       android:text="Price R750"
-                       android:layout_marginTop="8dp"/>
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+                       android:layout_marginTop="8dp"
+                       android:gravity="center_vertical">
+
+                       <TextView
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="1"
+                           android:text="Price R750"/>
+
+                       <Button
+                           android:id="@+id/btn_more_info2"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="More Info"/>
+
+                   </LinearLayout>
 
                </LinearLayout>
 
@@ -190,11 +220,26 @@
                        android:text="The purpose of this course is to provide the basic knowledge of watering, pruning and planting in a dosmestic garden. Which includes water restrictionss and the watering requirements of indigenous and exotic plants, pruning and proppagation of plants and planting techniques for diffrent plant types"
                        android:layout_marginTop="8dp"/>
 
-                   <TextView
-                       android:layout_height="wrap_content"
+                   <LinearLayout
                        android:layout_width="match_parent"
-                       android:text="Price R750"
-                       android:layout_marginTop="8dp"/>
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+                       android:layout_marginTop="8dp"
+                       android:gravity="center_vertical">
+
+                       <TextView
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="1"
+                           android:text="Price R750"/>
+
+                       <Button
+                           android:id="@+id/btn_more_info3"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="More Info"/>
+
+                   </LinearLayout>
 
                </LinearLayout>
 

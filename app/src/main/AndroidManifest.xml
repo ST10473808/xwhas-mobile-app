@@ -12,6 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.XhwasMobileApp">
         <activity
+            android:name=".Garden_Maintenance_info"
+            android:exported="false" />
+        <activity
+            android:name=".Child_Minding_info"
+            android:exported="false" />
+        <activity
+            android:name=".Sewing_info"
+            android:exported="false" />
+        <activity
+            android:name=".Life_Skills_info"
+            android:exported="false" />
+        <activity
+            android:name=".Cooking_info"
+            android:exported="false" />
+        <activity
+            android:name=".First_Aid_info"
+            android:exported="false" />
+        <activity
+            android:name=".Landscaping_info"
+            android:exported="false" />
+        <activity
             android:name=".CalculateFees"
             android:exported="false" />
         <activity

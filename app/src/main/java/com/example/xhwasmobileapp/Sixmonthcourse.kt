@@ -28,6 +28,11 @@ class Sixmonthcourse : AppCompatActivity() {
         val six_week_course = findViewById<TextView>(R.id.six_week_course)
         val six_month_course = findViewById<TextView>(R.id.six_month_course)
 
+        val btn_more_info = findViewById<Button>(R.id.btn_more_info)
+        val btn_more_info2 = findViewById<Button>(R.id.btn_more_info2)
+        val btn_more_info3 = findViewById<Button>(R.id.btn_more_info3)
+        val btn_more_info4 = findViewById<Button>(R.id.btn_more_info4)
+
         home.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -50,6 +55,28 @@ class Sixmonthcourse : AppCompatActivity() {
 
         six_month_course.setOnClickListener {
             val intent = Intent(this, Sixmonthcourse::class.java)
+            startActivity(intent)
+
+            //Takes users to a seperate screen contianing more information about the courses
+
+        }
+        btn_more_info.setOnClickListener {
+            val intent = Intent(this, Garden_Maintenance_info::class.java)
+            startActivity(intent)
+        }
+
+        btn_more_info2.setOnClickListener {
+            val intent = Intent(this, Cooking_info::class.java)
+            startActivity(intent)
+        }
+
+        btn_more_info3.setOnClickListener {
+            val intent = Intent(this, Child_Minding_info::class.java)
+            startActivity(intent)
+        }
+
+        btn_more_info4.setOnClickListener {
+            val intent = Intent(this, Life_Skills_info::class.java)
             startActivity(intent)
         }
     }

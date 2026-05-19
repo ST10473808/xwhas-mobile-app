@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.graphics.Color
 
 //Sotres the information of the courses
 
@@ -30,7 +31,7 @@ class CalculateFees : AppCompatActivity() {
             insets
         }
 
-        // Navigaation
+        // Navigation
 
         val home = findViewById<TextView>(R.id.home)
         val contact = findViewById<TextView>(R.id.contact)
@@ -48,6 +49,7 @@ class CalculateFees : AppCompatActivity() {
         val btn_Garden_Maintenance = findViewById<TextView>(R.id.btn_Garden_Maintenance)
         val btn_calculate = findViewById<TextView>(R.id.btn_calculate)
         val btn_Total = findViewById<TextView>(R.id.btn_Total)
+        val btn_clear = findViewById<TextView>(R.id.btn_clear)
 
         // Navigation buttons
 
@@ -76,67 +78,93 @@ class CalculateFees : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         // Course selection buttons
 
         btn_first_aid.setOnClickListener {
-            toggleCourse(Course("First Aid", 1500))
+            toggleCourse(Course("First Aid", 1500), btn_first_aid)
         }
 
         btn_Sewing.setOnClickListener {
-            toggleCourse(Course("Sewing", 1500))
+            toggleCourse(Course("Sewing", 1500), btn_Sewing)
         }
 
         btn_Landscaping.setOnClickListener {
-            toggleCourse(Course("Landscaping", 1500))
+            toggleCourse(Course("Landscaping", 1500), btn_Landscaping)
         }
 
         btn_Life_skills.setOnClickListener {
-            toggleCourse(Course("Life skills", 1500))
+            toggleCourse(Course("Life skills", 1500), btn_Life_skills)
         }
 
         btn_Child_Minding.setOnClickListener {
-            toggleCourse(Course("Child Minding", 750))
+            toggleCourse(Course("Child Minding", 750), btn_Child_Minding)
         }
 
         btn_Cooking.setOnClickListener {
-            toggleCourse(Course("Cooking", 750))
+            toggleCourse(Course("Cooking", 750), btn_Cooking)
         }
 
         btn_Garden_Maintenance.setOnClickListener {
-            toggleCourse(Course("Garden Maintenance", 750))
+            toggleCourse(Course("Garden Maintenance", 750), btn_Garden_Maintenance)
         }
 
-        //Used to work out the discounts
+        //Resets the list of courses and the total amount
 
-        btn_calculate.setOnClickListener {
-            val total = selectedCourses.sumOf { it.price }
-            val courseCount = selectedCourses.size
+        btn_clear.setOnClickListener {
+            selectedCourses.clear()
 
-            val discount = when {
-            courseCount == 1 -> 0
-            courseCount == 2 -> 5
-            courseCount == 3 -> 10
-             else -> if (courseCount > 3) 15 else  0
+            btn_Total.text = "Total: R0"
+
+            //Resets the colour of the buttons
+
+            btn_first_aid.setBackgroundColor(Color.parseColor("#7357B5"))
+            btn_Sewing.setBackgroundColor(Color.parseColor("#7357B5"))
+            btn_Landscaping.setBackgroundColor(Color.parseColor("#7357B5"))
+            btn_Life_skills.setBackgroundColor(Color.parseColor("#7357B5"))
+            btn_Child_Minding.setBackgroundColor(Color.parseColor("#7357B5"))
+            btn_Cooking.setBackgroundColor(Color.parseColor("#7357B5"))
+            btn_Garden_Maintenance.setBackgroundColor(Color.parseColor("#7357B5"))
         }
 
-            val discountedTotal = total - (total * discount / 100)
-            val finalTotal = discountedTotal - courseCount
+            //Used to work out the discounts
 
-           btn_Total.text = "Total: R$finalTotal"
+            btn_calculate.setOnClickListener {
+                val total = selectedCourses.sumOf { it.price }
+                val courseCount = selectedCourses.size
 
+                val discount = when {
+                    courseCount == 1 -> 0
+                    courseCount == 2 -> 5
+                    courseCount == 3 -> 10
+                    else -> if (courseCount > 3) 15 else 0
+                }
+
+                val discountedTotal = total - (total * discount / 100)
+                val finalTotal = discountedTotal
+
+                btn_Total.text = "Total: R$finalTotal"
+
+            }
         }
-    }
 
         //Selects and deselects the courses
-        private fun toggleCourse(course: Course) {
+        private fun toggleCourse(course: Course, button: TextView) {
             val existingCourse = selectedCourses.find { it.name == course.name }
 
             if (existingCourse != null) {
                 selectedCourses.remove(existingCourse)
+
+                //Resets the colour of the buttons
+
+                button.setBackgroundColor(Color.parseColor("#7357B5"))
+
             } else {
                 selectedCourses.add(course)
 
-                // clear button goes here
+                //Resets the colour of the buttons
+
+                button.setBackgroundColor(Color.GREEN)
 
             }
         }

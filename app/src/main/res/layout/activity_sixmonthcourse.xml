@@ -72,60 +72,79 @@
         android:layout_height="0dp"
         android:fillViewport="true"
 
-        app:layout_constraintTop_toBottomOf="@+id/topMenu"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/topMenu"
+        app:layout_constraintVertical_bias="1.0">
 
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp">
 
             <!--Cont1 First aid-->
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:orientation="vertical">
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text="First Aid"
-                android:textSize="20sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
 
-                <!-- Images goes here-->
 
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-               android:text="The purpose of this course is to provide first aid awerness and basic life support. Which includes wounds and bleeding, burns and fracutres, emergency scene management, CPR and respiratory distress"
-               android:layout_marginTop="8dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="First Aid"
+                        android:textSize="20sp" />
 
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text="Price R1500"
-                android:layout_marginTop="8dp"/>
+                    <!-- Images goes here-->
 
-             </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="The purpose of this course is to provide first aid awerness and basic life support. Which includes wounds and bleeding, burns and fracutres, emergency scene management, CPR and respiratory distress" />
 
-        </com.google.android.material.card.MaterialCardView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-          <!--Cont2 Sewing-->
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Price R1500" />
+
+                        <Button
+                            android:id="@+id/btn_more_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="More Info" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--Cont2 Sewing-->
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card2"
@@ -138,26 +157,41 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="12dp">
 
                     <TextView
-                        android:layout_height="wrap_content"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Sewing"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
 
                     <TextView
-                        android:layout_height="wrap_content"
                         android:layout_width="match_parent"
-                        android:text="The purpose of this course is to provide alterations and new garment tailoring services. Which includes the types of sewing stiches, threading and sewing machine, sewing buttons, zips,hems amd seams, making alterations and designing and sewing new garments"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="The purpose of this course is to provide alterations and new garment tailoring services. Which includes the types of sewing stiches, threading and sewing machine, sewing buttons, zips,hems amd seams, making alterations and designing and sewing new garments" />
 
-                    <TextView
-                        android:layout_height="wrap_content"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:text="Price R1500"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Price R1500" />
+
+                        <Button
+                            android:id="@+id/btn_more_info2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="More Info" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -176,27 +210,41 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="12dp">
 
                     <TextView
-                        android:layout_height="wrap_content"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Landscaping"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
 
                     <TextView
-                        android:layout_height="wrap_content"
                         android:layout_width="match_parent"
-                        android:text="The purpose of this course is to provide landscaping services for new and established gardens.Which inludes indigenous and exotic plants and tress, fixed structures ( fountains, statues, benches, tables, built-in braai), balancing of fixed structures, plants and trees in a garden, aesthetics of plants and colours and and garden layout"
-                        android:layout_marginTop="8dp"/>
-
-                    <TextView
                         android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:text="Price R1500"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_marginTop="8dp"
+                        android:text="The purpose of this course is to provide landscaping services for new and established gardens.Which inludes indigenous and exotic plants and tress, fixed structures ( fountains, statues, benches, tables, built-in braai), balancing of fixed structures, plants and trees in a garden, aesthetics of plants and colours and and garden layout" />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Price R1500" />
+
+                        <Button
+                            android:id="@+id/btn_more_info3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="More Info" />
+
+                    </LinearLayout>
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
@@ -214,26 +262,41 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="12dp">
 
                     <TextView
-                        android:layout_height="wrap_content"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="Life skills"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
 
                     <TextView
-                        android:layout_height="wrap_content"
                         android:layout_width="match_parent"
-                        android:text="The purpose of this course is to provide skills to navigate basic life necessities. Which includes opening a bank account, basic reading and writing literacy, basic numeric literacy and basic labour law"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="The purpose of this course is to provide skills to navigate basic life necessities. Which includes opening a bank account, basic reading and writing literacy, basic numeric literacy and basic labour law" />
 
-                    <TextView
-                        android:layout_height="wrap_content"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:text="Price R1500"
-                        android:layout_marginTop="8dp"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Price R1500" />
+
+                        <Button
+                            android:id="@+id/btn_more_info4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="More Info" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 

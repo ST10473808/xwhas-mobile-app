@@ -8,11 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class sixweekcourse : AppCompatActivity() {
+class Sewing_info : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_sixweekcourse)
+        setContentView(R.layout.activity_sewing_info)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -24,9 +24,8 @@ class sixweekcourse : AppCompatActivity() {
         val six_week_course = findViewById<TextView>(R.id.six_week_course)
         val six_month_course = findViewById<TextView>(R.id.six_month_course)
 
-        val btn_more_info3 = findViewById<TextView>(R.id.btn_more_info3)
-        val btn_more_info2 = findViewById<TextView>(R.id.btn_more_info2)
-        val btn_more_info = findViewById<TextView>(R.id.btn_more_info)
+        val btn_Back = findViewById<TextView>(R.id.btn_Back)
+
 
         home.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -53,19 +52,13 @@ class sixweekcourse : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Takes user to a seperate screen contianing more information about the courses
+        // Takes user back to the six week course screen
 
-       btn_more_info3.setOnClickListener {
-           val intent = Intent(this, Garden_Maintenance_info::class.java)
-           startActivity(intent)
-       }
-        btn_more_info2.setOnClickListener {
-            val intent = Intent(this, Cooking_info::class.java)
+        btn_Back.setOnClickListener {
+            val intent = Intent(this, Sixmonthcourse::class.java)
             startActivity(intent)
         }
-        btn_more_info.setOnClickListener {
-            val intent = Intent(this, Child_Minding_info::class.java)
-            startActivity(intent)
-        }
+
     }
 }
+
